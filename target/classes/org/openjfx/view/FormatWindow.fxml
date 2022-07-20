@@ -1,55 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane fx:id="inputPane" prefHeight="700.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.FormatWindow">
+<BorderPane fx:id="inputPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.controller.FormatWindow">
     <center>
         <GridPane prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
             <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="636.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="364.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="54.0" minWidth="10.0" prefWidth="54.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="148.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="408.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="449.0" minWidth="10.0" prefWidth="237.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="53.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="103.0" minHeight="2.0" prefHeight="16.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="210.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="146.0" minHeight="0.0" prefHeight="54.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="146.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="261.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="236.0" minHeight="0.0" prefHeight="103.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="260.0" minHeight="10.0" prefHeight="181.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="103.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="103.0" minHeight="2.0" prefHeight="3.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="210.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="235.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="240.0" minHeight="0.0" prefHeight="77.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="215.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="261.0" minHeight="10.0" prefHeight="244.0" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="80.0" minHeight="5.0" prefHeight="11.0" vgrow="SOMETIMES" />
             </rowConstraints>
          <children>
-            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="137.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="227.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="132.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.0" minWidth="10.0" prefWidth="232.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="132.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="232.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
+            <Label text="Путь к данным об участниках:" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Данные каждого участника:" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Временное окно:" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Временной отступ:" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Список электродов:" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Путь к папке, в которой находятся все папки с данными об участниках. Для гаратированно корректного импорта данных следует убрать пробелы из пути" textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="В папке должна находиться подапка CSV_Export c 20 csv файлами электродов; choco_order.txt; times.txt; first.txt" textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Продолжительность временного промежутка для анализа. Должна быть действительным числом от 0 до 300 включительно (в секудах)" textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Начало временного промежутка для анализа. Должно быть действительным числом от 0 до 50 включительно (в секундах)" textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label prefHeight="231.0" prefWidth="388.0" text="Список, сопоставляющий номер электрода и его название. Список является набором строк, разделенных новой строкой. Строка указывается в формате &quot;Номер электрода: название электрода&quot;, где номер является натуральным числом от 0 до 20 включительно, а название электрода является набором из букв и последующих цифр. Все номера электродов должны быть уникальными. В случае, если выбирается только один участник, электродов должно быть не более 7 в случае анализа по мощности и не более количества асимметрий - 2 в случае асимметрии" textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="175.0" text="C:\Users\admin\DB" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField editable="false" maxWidth="175.0" prefWidth="175.0" text="135.3" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <TextField editable="false" maxWidth="-Infinity" prefWidth="175.0" text="45.8" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <TextArea editable="false" maxWidth="-Infinity" prefHeight="200.0" prefWidth="175.0" text="0: Fp1&#10;1: P3&#10;4: P4&#10;5: Fp2&#10;10: O4&#10;17: O3 " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <ImageView fitHeight="92.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../resources/images/FolderContent.png" />
+               </image>
+            </ImageView>
          </children>
         </GridPane>
     </center>

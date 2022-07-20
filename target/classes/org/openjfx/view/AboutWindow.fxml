@@ -8,24 +8,30 @@
     <center>
         <GridPane prefHeight="200.0" prefWidth="400.0" BorderPane.alignment="CENTER">
             <columnConstraints>
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="200.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="765.0" minWidth="10.0" prefWidth="705.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="665.0" minWidth="10.0" prefWidth="39.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="765.0" minWidth="10.0" prefWidth="513.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="392.0" minWidth="10.0" prefWidth="54.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="103.0" minHeight="0.0" prefHeight="3.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="269.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="314.0" minHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="326.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="360.0" minHeight="5.0" prefHeight="91.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="105.0" minHeight="0.0" prefHeight="105.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="314.0" minHeight="0.0" prefHeight="151.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="385.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="360.0" minHeight="5.0" prefHeight="62.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-            <Label alignment="CENTER" prefWidth="608.0" text="Автор: Ахаладзе Мария Мерабиевна, студентка ПИ-19-2" textAlignment="CENTER" textFill="#687aab" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+            <Label alignment="CENTER" prefWidth="608.0" text="Автор: Ахаладзе Мария Мерабиевна, mmakhaladze@edu.hse.ru" textAlignment="CENTER" textFill="#687aab" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font size="14.0" />
                </font></Label>
-            <Label layoutX="41.0" layoutY="172.0" prefHeight="60.0" prefWidth="608.0" text="После корректного ввода модели генерируется схема марковской модели. Для ее запуска необходимо выбрать терапию, ввести количество итераций и количество повторов моделирования на пациенте" textAlignment="CENTER" textFill="#687aab" wrapText="true">
+            <Label text="Для выполнения вычислений необходимо указать путь к папке с папками участников эксперимента, указать объем входных данных (по одному участнику или всем), выбрать частотную волну, указать начало временного интервала и его длительность, выбрать тип формирования признаков (электроды или их ассиметрия) и указать рассматриваемые в анализе электроды." textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Выходными данными являются список p-значений для каждого признака, а также список значимых признаков при p = 0.05." textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Данное приложение позволяет выполнить поиск p-значений для признаков-электродов или ассиметрии, а также для признаков вкусовой оценки и цены за шоколад." textAlignment="CENTER" textFill="#687aab" wrapText="true" GridPane.columnIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
