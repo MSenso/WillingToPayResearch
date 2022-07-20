@@ -189,7 +189,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Выберите способ анализа электродов:" textFill="#687aab" wrapText="true">
+                        <Label text="Укажите способ анализа данных ЭЭГ:" textFill="#687aab" wrapText="true">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>

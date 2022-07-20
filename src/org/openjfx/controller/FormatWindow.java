@@ -12,8 +12,6 @@ import java.util.List;
 
 public class FormatWindow implements Window {
     @FXML
-    private Label matrLabel;
-    @FXML
     private BorderPane inputPane;
 
     private Window parentWindow;
@@ -35,8 +33,6 @@ public class FormatWindow implements Window {
 
     @FXML
     public void initialize() {
-        matrLabel.setText(matrLabel.getText() + System.lineSeparator() + "Номер итерации 1:" + System.lineSeparator() +
-                "число 1, число 2" + System.lineSeparator() + "число 3, число 4");
         setBackgroundImage();
     }
 }

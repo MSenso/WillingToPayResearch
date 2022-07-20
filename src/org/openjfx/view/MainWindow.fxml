@@ -44,6 +44,7 @@
                   <RowConstraints maxHeight="306.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="400.0" minHeight="0.0" prefHeight="76.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="514.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="514.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="145.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="400.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
                     </rowConstraints>
@@ -150,7 +151,7 @@
                         <ChoiceBox fx:id="wavesBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                      </children>
                   </GridPane>
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -166,7 +167,7 @@
                         <TextArea fx:id="eegField" maxHeight="-Infinity" maxWidth="190.0" prefHeight="200.0" prefWidth="190.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                      </children>
                   </GridPane>
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -177,6 +178,23 @@
                     </rowConstraints>
                      <children>
                         <Button fx:id="runButton" mnemonicParsing="false" onAction="#onRunButton" text="Вычислить значимость признаков" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Укажите способ анализа данных ЭЭГ:" textFill="#687aab" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="analysisTypeBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                      </children>
                   </GridPane>
                     </children>

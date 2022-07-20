@@ -76,14 +76,18 @@ public class MainWindow implements Window {
     }
 
     private boolean isCorrectEegLine(String line) {
-        System.out.println(line);
         if (line == null || line.isEmpty() || line.isBlank()) {
-            System.out.println("Пустая строка");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("В списке электродов содержится пустая строка"));
             return false;
         }
         var regex = "^[\\d]+:[ ]*[\\d\\w]+$";
         if (!line.matches(regex)) {
-            System.out.println("Не соответствует шаблону");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("Строка электрода не соответствует шаблону \"Номер электрода: название электрода\". " +
+                            "Убедитесь, что номер является натуральным числом, а название состоит из букв и следующими за ними цифр"));
             return false;
         }
         var eegIndex = Integer.parseInt(line.split(":")[0]);
@@ -108,7 +112,9 @@ public class MainWindow implements Window {
     private boolean checkTimeRangeField() {
         var line = this.timeRangeField.getText();
         if (line == null || line.isEmpty() || line.isBlank()) {
-            System.out.println("Строка пуста");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("Строка временного окна пуста"));
             return false;
         }
         if (tryParseToDouble(line)) {
@@ -117,11 +123,15 @@ public class MainWindow implements Window {
                 this.model.setTimeRange(number);
                 return true;
             } else {
-                System.out.println("Вне диапазона");
+                showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                        "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                        List.of("Значение временного окна должно быть в диапазоне от 0 до 300 невключительно"));
                 return false;
             }
         } else {
-            System.out.println("Не число");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("Значение временного окна должно быть действительным числом"));
             return false;
         }
     }
@@ -129,7 +139,9 @@ public class MainWindow implements Window {
     private boolean checkTimeDelayField() {
         var line = this.delayField.getText();
         if (line == null || line.isEmpty() || line.isBlank()) {
-            System.out.println("Строка пуста");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("Строка временного интервала пуста"));
             return false;
         }
         if (tryParseToDouble(line)) {
@@ -138,11 +150,15 @@ public class MainWindow implements Window {
                 this.model.setTimeDelay(number);
                 return true;
             } else {
-                System.out.println("Вне диапазона");
+                showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                        "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                        List.of("Значение временного интервала должно быть в диапазоне от 0 до 50 невключительно"));
                 return false;
             }
         } else {
-            System.out.println("Не число");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("Значение временного интервала должно быть действительным числом"));
             return false;
         }
     }
@@ -151,7 +167,9 @@ public class MainWindow implements Window {
         this.model.setEegDict(new HashMap<>());
         var line = this.eegField.getText();
         if (line.isEmpty() || line.isBlank()) {
-            System.out.println("Пустой ввод");
+            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                    List.of("В поле электродов содержится пустая строка"));
             return false;
         } else {
             var lines = line.split("\\r?\\n|\\r");
@@ -159,7 +177,9 @@ public class MainWindow implements Window {
                     ? this.model.getParticipants().size() : 1;
             var maxLimit = participantsCount < 3 ? participantsCount * AnalysisModel.getRowsPerParticipant() - 3 : AnalysisModel.getEegCount();
             if (lines.length == 0 || lines.length > maxLimit) {
-                System.out.println("Длина массива неверна");
+                showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                        "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                        List.of("Для возможности вычисления p значений при выбранном количестве участников максимальное количество электродов равно " + maxLimit));
                 return false;
             } else {
                 for (var curLine : lines) {
@@ -168,13 +188,17 @@ public class MainWindow implements Window {
                         var index = Integer.parseInt(parts[0]);
                         if (this.model.getEegDict().containsKey(index)) {
                             this.model.setEegDict(new HashMap<>());
-                            System.out.println("Таклй ключ есть");
+                            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                                    List.of("В списке электродов содержатся одинаковые номера"));
                             return false;
                         }
                         this.model.getEegDict().put(index, parts[1]);
                     } else {
                         this.model.setEegDict(new HashMap<>());
-                        System.out.println("Некорректная строка");
+                        showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
+                                "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
+                                List.of("Значение номера электрода должно быть в диапазоне от 0 до 20 включительно"));
                         return false;
                     }
                 }
@@ -295,7 +319,7 @@ public class MainWindow implements Window {
 
     @FXML
     void handleFormatMenuItemAction() {
-        showWindow(1050, 700, "/org/openjfx/view/FormatWindow.fxml",
+        showWindow(800, 600, "/org/openjfx/view/FormatWindow.fxml",
                 "/org/openjfx/resources/images/InfoIcon.png", "Формат ввода");
     }
 
