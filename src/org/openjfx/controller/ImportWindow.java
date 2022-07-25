@@ -5,22 +5,17 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class ImportWindow implements Window {
 
@@ -30,8 +25,6 @@ public class ImportWindow implements Window {
     private Button okButton;
     @FXML
     private Button cancelButton;
-    @FXML
-    private BorderPane inputPane;
 
     private List<String> participants = new ArrayList<>();
 
@@ -65,38 +58,22 @@ public class ImportWindow implements Window {
 
     public ObservableList<String> importData(String path) {
         ObservableList<String> errors = FXCollections.observableArrayList();
-        var directoryPath = new File(path);
-        var content = directoryPath.listFiles();
+        File directoryPath = new File(path);
+        File[] content = directoryPath.listFiles();
         if (Optional.ofNullable(content).isPresent()) {
             this.participants = Arrays.stream(content)
                     .filter(File::isDirectory)
                     .map(File::getName)
-                    .toList();
+                    .collect(Collectors.toList());
         } else errors.add("В директории должна быть папка хотя бы с одним участником");
         return errors;
-    }
-
-    private void setBackgroundImage() {
-        try {
-            Image image = new Image(new FileInputStream("src/org/openjfx/resources/images/addBackground.png"));
-            inputPane.setBackground(new Background(new BackgroundImage(image, null, null, null, null)));
-        } catch (FileNotFoundException e) {
-            showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
-                    "/org/openjfx/resources/images/ErrorIcon.png", "Ошибка",
-                    List.of("Пожалуйста, проверьте наличие файла mainBackground в папке src/org/openjfx/resources/images"));
-        }
-    }
-
-    @FXML
-    public void initialize() {
-        setBackgroundImage();
     }
 
     @FXML
     void handleOkButtonAction() {
         if (pathText.getText().isEmpty()) {
             showWindow(550, 400, "/org/openjfx/view/ErrorWindow.fxml",
-                    "src/ErrorIcon.png", "Ошибка", List.of("Файл не выбран"));
+                    "src/ErrorIcon.png", "Ошибка", Arrays.asList("Файл не выбран"));
         } else {
             List<String> errors = importData(pathText.getText());
             if (errors.size() == 0) {
